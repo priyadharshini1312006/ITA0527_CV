@@ -1,0 +1,13 @@
+import cv2
+
+img = cv2.imread("image.jpg")
+
+roi = img[100:200,100:200]
+
+img[250:350,250:350] = roi
+
+cv2.imshow("Original Image", cv2.imread("image.jpg"))
+cv2.imshow("ROI Output Image", img)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
