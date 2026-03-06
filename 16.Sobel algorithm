@@ -1,0 +1,16 @@
+import cv2
+
+# Read image
+img = cv2.imread("image.jpg", 0)
+
+# Apply Sobel filter
+sobelx = cv2.Sobel(img, cv2.CV_64F, 1, 0, ksize=3)
+sobely = cv2.Sobel(img, cv2.CV_64F, 0, 1, ksize=3)
+
+# Display images
+cv2.imshow("Original Image", img)
+cv2.imshow("Sobel X Output", sobelx)
+cv2.imshow("Sobel Y Output", sobely)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
